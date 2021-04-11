@@ -64,6 +64,11 @@ namespace THK
             }
             else
             {
+                if (tb_Ten.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập đủ dữ liệu", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 CSDL_OOP.Instance.setSPByID(ID_SP, getSP());
             }
             this.Dispose();
