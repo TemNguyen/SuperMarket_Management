@@ -94,7 +94,7 @@ namespace THK
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = CSDL_OOP.Instance.SortSPBy(property);
         }
-        private void reloadDatagrid()
+        public void reloadDatagrid()
         {
             string ID_MH = ((CBBItem)cbb_MH.SelectedItem).Value;
             string TenSP = tb_Search.Text;

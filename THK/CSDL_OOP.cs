@@ -85,7 +85,7 @@ namespace THK
         {
             List<SP> list = cloneDSSP();
             list.Add(s);
-            CSDL.Instance.setDSSP(list);
+            syncDSSP(list);
             return true;
         }
         public bool setSPByID(int ID_SP, SP s)
@@ -101,7 +101,7 @@ namespace THK
                 }
                 index++;
             }
-            CSDL.Instance.setDSSP(list);
+            syncDSSP(list);
             return true;
         }
         public bool deleteSPByID(int ID_SP)
@@ -115,7 +115,7 @@ namespace THK
                     break;
                 }
             }
-            CSDL.Instance.setDSSP(list);
+            syncDSSP(list);
             return true;
         }
         public List<SP> SortSPBy(string property)
@@ -156,6 +156,20 @@ namespace THK
                 }
             }
             return list;
+        }
+        private void syncDSSP(List<SP> s)
+        {
+            CSDL.Instance.DSSP.Rows.Clear();
+            foreach(var i in s)
+            {
+                DataRow dr = CSDL.Instance.DSSP.NewRow();
+                dr["ID_SP"] = i.ID_SP;
+                dr["Ten"] = i.Ten;
+                dr["TrangThai"] = i.TrangThai;
+                dr["NSX"] = i.NSX;
+                dr["ID_MH"] = i.ID_MH;
+                CSDL.Instance.DSSP.Rows.Add(dr);
+            }    
         }
         private List<SP> cloneDSSP()
         {

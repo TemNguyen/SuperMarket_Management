@@ -25,8 +25,8 @@ namespace THK
         }
         public static bool CompareTT(SP s1, SP s2)
         {
-            if (s1.TrangThai != s2.TrangThai) return true;
-            else return false;
+            if (!s1.TrangThai && s2.TrangThai) return true;
+            return false;
         }
         public static bool CompareNSX(SP s1, SP s2)
         {
