@@ -16,7 +16,7 @@ namespace THK
         {
             InitializeComponent();
             setCbbMatHang();
-            setSbbSort();
+            setCbbSort();
             dataGridView1.DataSource = CSDL_OOP.Instance.getAllSP("0", "");
         }
         private void setCbbMatHang()
@@ -36,7 +36,7 @@ namespace THK
             }
             cbb_MH.SelectedIndex = 0;
         }
-        private void setSbbSort()
+        private void setCbbSort()
         {
             int propertyID = 0;
             foreach(DataColumn d in CSDL.Instance.DSSP.Columns)
@@ -86,7 +86,6 @@ namespace THK
                 case DialogResult.No:
                     break;
             }    
-            
         }
         private void btn_Sort_Click(object sender, EventArgs e)
         {
