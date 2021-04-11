@@ -80,20 +80,5 @@ namespace THK
             dr4["TenMH"] = "Tieu Dung";
             DSMH.Rows.Add(dr4);
         }
-        //public void syncDSSP(List<SP> s)
-        //{
-        //    DSSP.Rows.Clear();
-        //    foreach(var i in s)
-        //    {
-        //        DataRow dr = DSSP.NewRow();
-        //        dr["ID_SP"] = i.ID_SP;
-        //        dr["Ten"] = i.Ten;
-        //        dr["TrangThai"] = i.TrangThai;
-        //        dr["NSX"] = i.NSX;
-        //        dr["ID_MH"] = i.ID_MH;
-        //        DSSP.Rows.Add(dr);
-        //    }    
-        //}
-
     }
 }

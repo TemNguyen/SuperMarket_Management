@@ -63,7 +63,7 @@ namespace THK
             Form2 f2 = new Form2();
             f2.Sender(-1);
             f2.ShowDialog();
-            this.Hide();
+            reloadDatagrid();
         }
         private void btn_Edit_Click(object sender, EventArgs e)
         {
@@ -71,7 +71,7 @@ namespace THK
             Form2 f2 = new Form2();
             f2.Sender(ID_SP);
             f2.ShowDialog();
-            this.Hide();
+            reloadDatagrid();
         }
         private void btn_Del_Click(object sender, EventArgs e)
         {
@@ -100,10 +100,6 @@ namespace THK
             string TenSP = tb_Search.Text;
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = CSDL_OOP.Instance.getAllSP(ID_MH, TenSP);
-        }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

@@ -66,8 +66,6 @@ namespace THK
             {
                 CSDL_OOP.Instance.setSPByID(ID_SP, getSP());
             }
-            Form1 f1 = new Form1();
-            f1.Show();
             this.Dispose();
         }
         private void btn_Cancel_Click(object sender, EventArgs e)
